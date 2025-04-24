@@ -18,5 +18,7 @@ Corrected_Y = Q10*(rawX - X0) + Q11*(rawY - Y0)
 
 Example plot, before (green) and after (blue) calibration. The ideal case is represented by a red circle is centered on the plot origin. Working code is presented for Matlab or Gnu Octave, and in Python, along with the sample data set (magcal2d_cut.csv) that resulted in the plot below.
 
+*Note: in this example, the offsets applied to the raw data are very small. They are usually much larger.
+
 ![Capture](https://github.com/user-attachments/assets/605aeee7-60a4-4b0b-855c-d8e23f04e2c1)
 
