@@ -111,6 +111,7 @@ print('Correction matrix to apply to offset data')
 print(Q)
 
 """
+# optional plot of ellipse fitted to raw data
 ellipse = Ellipse((x0, y0), ap * 2, bp * 2, color='r', angle=math.degrees(phi), fill=False)
 fig, ax = plt.subplots()
 ax.add_patch(ellipse)
