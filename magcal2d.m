@@ -9,10 +9,7 @@
 % First step: collect data and produce a CSV file (comma separated values) of
 % magnetometer X and Y values (can be raw).
 %
-% Second step: from Matlab File Menu, import CSV file of (max, magy)
-% measurements into array Book1.
-%
-% Third step: execute magcal_2d.m
+% Second step: execute magcal_2d.m
 %
 % This work was inspired by the 3D procedure described in:
 % http://sailboatinstruments.blogspot.com/2011/08/improved-magnetometer-calibration.html
@@ -74,7 +71,6 @@ Q = R^-1*([scale(1) 0; 0, scale(2)]*R);
 % correct the input data
 
 xy = ( Q*(Book1-xy0)' )';
-
 csvwrite('corrected_data.csv',xy);
 
 % replot scaled data
