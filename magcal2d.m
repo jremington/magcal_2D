@@ -73,7 +73,7 @@ Q = R^-1*([scale(1) 0; 0, scale(2)]*R);
 xy = ( Q*(Book1-xy0)' )';
 csvwrite('corrected_data.csv',xy);
 
-% replot scaled data
+% replot raw and scaled data
 figure;
 axis equal;
 scatter(Book1(:,1),Book1(:,2));
