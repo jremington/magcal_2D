@@ -1,6 +1,6 @@
 # magcal_2D
 
-##Calibration of 2D magnetometer data
+#Calibration of 2D magnetometer data
 
 To be used as electronic compasses, magnetometers need to be calibrated in their final resting place, to correct for local magnetic fields and distortions due to ferrous materials. Most current calibration methods require to collect raw data from the magnetometer in a large number of different 3D orientations. For a good overview and tutorial, see https://thecavepearlproject.org/2015/05/22/calibrating-any-compass-or-accelerometer-for-arduino/
 
