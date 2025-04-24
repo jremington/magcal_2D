@@ -101,7 +101,7 @@ sp = math.sin(phi)
 
 # final result: matrix to align ellipse axes wrt coordinates system, normalize X and Y gains 
 # and rotate back. In Matlab matrix notation, where R is a 2x2 rotation matrix
-#Q = R^-1*([scale(1) 0; 0, scale(2)]*R);
+# Q = R^-1*([scale(1) 0; 0, scale(2)]*R);
 
 Q = np.matrix([[sx*cp*cp+sy*sp*sp, sx*cp*sp-sy*cp*sp],
                [sx*sp*cp-sy*sp*cp, sx*sp*sp+sy*cp*cp]])
