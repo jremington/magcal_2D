@@ -6,7 +6,7 @@ To be used as electronic compasses, magnetometers need to be calibrated in their
 
 Most current calibration methods require one to collect raw data from the magnetometer in a large number of different 3D orientations. For a good overview and tutorial, see https://thecavepearlproject.org/2015/05/22/calibrating-any-compass-or-accelerometer-for-arduino/
 
-On the other hand, for a magnetometer mounted on a vehicle or large robot, it is not practical to collect data for 3D orientations. However, a simpler calibration works well in 2D, where the vehicle or robot is simply rotated about the horizontal axis for one or more complete turns. For navigation, the heading relative to magnetic North can be determined very simply by taking the arctangent of the corrected X and Y data. 
+On the other hand, for a magnetometer mounted on a vehicle or large robot, it is not practical to collect data for 3D orientations. However, a simpler calibration works well in 2D, where the vehicle or robot is simply rotated about the horizontal axis for one or more complete turns. For navigation, the heading relative to magnetic North can be determined very simply by taking the arctangent of the corrected X and Y data. The magnetometer MUST be mounted with the Z axis vertical. 
 
 The procedure used here is very simple: an ellipse is fitted to the raw data, an offset is calculated and subtracted, the ellipse is rotated so that the major axis is aligned along X, the data are rescaled to circularize, then rotated back into the original orientation.
 
