@@ -12,16 +12,6 @@ rawdata = pd.read_csv('mag2d_cut.csv')
 xcol = rawdata["x"]
 ycol = rawdata["y"]
 
-xmin = xcol.min()
-xmax = xcol.max()
-
-ymin = ycol.min()
-ymax = ycol.max()
-
-width = xmax - xmin
-height = ymax - ymin
-xyratio = width / height
-
 # Code taken from https://scipython.com/blog/direct-linear-least-squares-fitting-of-an-ellipse/
 def fit_ellipse(x, y):
     """
