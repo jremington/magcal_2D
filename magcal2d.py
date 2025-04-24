@@ -123,7 +123,7 @@ def correctdata(row):
     x = np.array(row["x"] - x0)
     y = np.array(row["y"] - y0)
 
-    return [x * Q[0,0] + y * Q[0,1],
+    return [(x * Q[0,0] + y * Q[0,1]),
            (x * Q[1,0] + y * Q[1,1])]
 
 res = rawdata.apply(correctdata, axis=1, result_type='expand')
