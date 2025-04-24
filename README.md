@@ -18,7 +18,7 @@ Corrected_X = Q11*(rawX - X0) + Q12*(rawY - Y0)
 
 Corrected_Y = Q21*(rawX - X0) + Q22*(rawY - Y0)
 
-Working code is presented for Matlab or Gnu Octave, and in Python, along with the sample data set (magcal2d_cut.csv) that resulted in the plot below. The Matlab/Gnu Octave and Python results are equivalent.
+Working code is presented for Matlab or Gnu Octave, and in Python, along with the sample data set (magcal2d_raw.csv) that resulted in the plot below. The Matlab/Gnu Octave and Python results are equivalent.
 
 Example plot, before (green) and after (blue) calibration. The ideal case is represented by a red circle is centered on the plot origin. 
 *Note*: in this example, the offsets applied to the raw data are not large. They are often much larger.
