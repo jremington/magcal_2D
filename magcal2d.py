@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 
 print('NUMPY version ', np.__version__)
-rawdata = pd.read_csv('mag2d_cut.csv')
+rawdata = pd.read_csv('mag2d_raw.csv')
 
 xcol = rawdata["x"]
 ycol = rawdata["y"]
