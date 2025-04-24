@@ -1,5 +1,4 @@
 # major modifications, starting from  https://www.mirkosertic.de/blog/2023/01/magnetometer-calibration-ellipsoid/
-
 import math
 import pandas as pd
 import numpy as np
