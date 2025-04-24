@@ -14,9 +14,9 @@ The procedure used here is very simple: an ellipse is fitted to the raw data, an
 
 The program output is a 2x2 correction matrix Q and offsets X0 and Y0, so that the corrected values are
 
-Corrected_X = Q00*(rawX - X0) + Q01*(rawY - Y0)
+Corrected_X = Q11*(rawX - X0) + Q12*(rawY - Y0)
 
-Corrected_Y = Q10*(rawX - X0) + Q11*(rawY - Y0)
+Corrected_Y = Q21*(rawX - X0) + Q22*(rawY - Y0)
 
 Working code is presented for Matlab or Gnu Octave, and in Python, along with the sample data set (magcal2d_cut.csv) that resulted in the plot below. The Matlab/Gnu Octave and Python results are equivalent.
 
