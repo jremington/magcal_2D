@@ -2,19 +2,24 @@
 % This MATLAB program calculates the calibration parameters for a 2D magnetometer.
 % As is customary, data for one or two complete revolutions of the magnetometer
 % should be collected while held level, points closely spaced if possible.
-%
+% S. James Remington 8/2013
 % uses published Matlab function EllipseDirectFit.m
 % http://www.mathworks.com/matlabcentral/fileexchange/22684-ellipse-fit-direct-method
 %
 % First step: collect data and produce a CSV file (comma separated values) of
 % magnetometer X and Y values (can be raw).
 %
-% Second step: execute magcal_2d.m
+% Second step: from Matlab File Menu, import CSV file of (max, magy)
+% measurements into array Book1.
+%
+% Third step: execute magcal_2d.m
 %
 % This work was inspired by the 3D procedure described in:
 % http://sailboatinstruments.blogspot.com/2011/08/improved-magnetometer-calibration.html
 %
-Book1 = csvread('mag2D.csv');
+
+% no column headings allowed!
+Book1 = csvread('mag2d_raw.csv');
 
 A = EllipseDirectFit(Book1);
 
@@ -68,34 +73,18 @@ Q = R^-1*([scale(1) 0; 0, scale(2)]*R);
 
 % correct the input data
 
-for i = 1 :  length(Book1)
-xy(i,:) = ( Q*(Book1(i,:)-xy0)' )';
-end
+xy = ( Q*(Book1-xy0)' )';
+
 csvwrite('corrected_data.csv',xy);
 
-% replot scaled data. Set "hold on" in EllipseDirectFit.m
-
-A = EllipseDirectFit(xy);
-
-% residual plot
-
+% replot scaled data
 figure;
+axis equal;
+scatter(Book1(:,1),Book1(:,2));
+hold on;
+scatter(xy(:,1),xy(:,2))
+legend('raw','corrected');
 
-p1 = (180./3.14159).*atan2(Book1(:,2),Book1(:,1));
-p2 = (180./3.14159).*atan2(xy(:,2),xy(:,1));
-xp = 1:length(Book1);
-hold on
-title('Bearing differences in degrees after rescaling');
-for i=1:length(p1)
-    pd(i) = p1(i)-p2(i);
-    if (pd(i)>180)
-        pd(i) = pd(i)-360;
-    end
-    if (pd(i) < -180)
-        pd(i) = pd(i)+360;
-    end
-end
-plot(xp,pd,'-g');
 
 disp(' ');
 disp('scaled rotation matrix and vector to apply: Q*(XY-XY0)');
