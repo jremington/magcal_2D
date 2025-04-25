@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 
-# input raw data, CSV file with column labels
+# input raw data, CSV file with column headings x and y
 rawdata = pd.read_csv('mag2d_raw.csv')
 xcol = rawdata["x"]
 ycol = rawdata["y"]
@@ -101,7 +101,7 @@ sp = math.sin(phi)
 
 # final result: matrix to align ellipse axes wrt coordinates system, normalize X and Y gains 
 # and rotate back. In Matlab matrix notation, where R is a 2x2 rotation matrix
-# Q = R^-1*([scale(1) 0; 0, scale(2)]*R);
+# Q = R^-1*([scalex, 0; 0, scaley]*R);
 
 Q = np.matrix([[sx*cp*cp+sy*sp*sp, sx*cp*sp-sy*cp*sp],
                [sx*sp*cp-sy*sp*cp, sx*sp*sp+sy*cp*cp]])
@@ -115,7 +115,8 @@ print(Q)
 ellipse = Ellipse((x0, y0), ap * 2, bp * 2, color='r', angle=math.degrees(phi), fill=False)
 fig, ax = plt.subplots()
 ax.add_patch(ellipse)
-ax.scatter(xcol, ycol, label='Data Points', color='b')
+ax.scatter(xcol, ycol, label='Raw Data Points', color='b')
+plt.legend(loc='best')
 plt.show()
 """
 
