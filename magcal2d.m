@@ -7,7 +7,7 @@
 % http://www.mathworks.com/matlabcentral/fileexchange/22684-ellipse-fit-direct-method
 %
 % First step: collect data and produce a CSV file (comma separated values) of
-% magnetometer X and Y values (can be raw).
+% magnetometer X and Y values (can be raw). No column headings.
 %
 % Second step: execute magcal_2d.m
 %
