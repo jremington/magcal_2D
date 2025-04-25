@@ -4,7 +4,7 @@ Calibration of 2D magnetometer data
 
 To be used as electronic compasses, magnetometers need to be calibrated in their final resting place. The calibration process corrects for local magnetic fields and field distortions due to nearby ferrous materials. 
 
-Most current calibration methods require one to collect raw data from the magnetometer in a large number of different 3D orientations. For a good overview and tutorial, see https://thecavepearlproject.org/2015/05/22/calibrating-any-compass-or-accelerometer-for-arduino/
+Most current calibration methods require one to collect raw data from the magnetometer in a large number of different 3D orientations, which is then used for making corrections to axial scale factors, determining offsets, etc. For a good overview and tutorial, see https://thecavepearlproject.org/2015/05/22/calibrating-any-compass-or-accelerometer-for-arduino/
 
 On the other hand, for a magnetometer mounted on a vehicle or large robot, it is not practical to collect data for 3D orientations. However, a simpler calibration works well in 2D, where the vehicle or robot is simply rotated about the vertical axis for one or more complete turns. For navigation, the heading relative to magnetic North can be determined very simply by taking the arctangent of the corrected X and Y data. 
 
