@@ -9,7 +9,7 @@
 % First step: collect data and produce a CSV file (comma separated values) of
 % magnetometer X and Y values (can be raw). No column headings.
 %
-% Second step: execute magcal_2d.m
+% Second step: enter file name and execute magcal_2d.m
 %
 % This work was inspired by the 3D procedure described in:
 % http://sailboatinstruments.blogspot.com/2011/08/improved-magnetometer-calibration.html
