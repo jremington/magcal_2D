@@ -115,7 +115,7 @@ print(Q)
 ellipse = Ellipse((x0, y0), ap * 2, bp * 2, color='r', angle=math.degrees(phi), fill=False)
 fig, ax = plt.subplots()
 ax.add_patch(ellipse)
-ax.scatter(xcol, ycol, label='Raw Data Points', color='b')
+ax.scatter(xcol, ycol, label='Raw Data', color='b')
 plt.legend(loc='best')
 plt.show()
 """
