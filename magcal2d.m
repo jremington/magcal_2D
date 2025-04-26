@@ -16,7 +16,7 @@
 %
 
 % no column headings allowed!
-Book1 = csvread('mag2d_raw.csv');
+Book1 = csvread('mag2d_raw_noheader.csv');
 
 A = EllipseDirectFit(Book1);
 
