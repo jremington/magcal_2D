@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 
 # input raw data, CSV file with column headings x and y
-rawdata = pd.read_csv('mag2d_raw.csv')
+rawdata = pd.read_csv('mag2d_raw_header.csv')
 xcol = rawdata["x"]
 ycol = rawdata["y"]
 
