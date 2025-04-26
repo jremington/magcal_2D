@@ -98,13 +98,13 @@ sx = bp / ap
 sy = 1
 cp = math.cos(phi)
 sp = math.sin(phi)
+R = np.matrix([[cp, sp], [-sp, cp]])
+S = np.matrix([[sx, 0],[0,sy]])
 
 # final result: matrix to align ellipse axes wrt coordinates system, normalize X and Y gains 
-# and rotate back. In Matlab matrix notation, where R is a 2x2 rotation matrix
-# Q = R^-1*([scalex, 0; 0, scaley]*R);
+# and rotate back.
 
-Q = np.matrix([[sx*cp*cp+sy*sp*sp, sx*cp*sp-sy*cp*sp],
-               [sx*sp*cp-sy*sp*cp, sx*sp*sp+sy*cp*cp]])
+Q = R.T @ S @ R
 
 print('offset to subtract from raw data (x0,y0) ',rounded[0],rounded[1])
 print('Correction matrix to apply to offset data')
