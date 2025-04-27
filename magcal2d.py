@@ -99,7 +99,7 @@ sy = 1
 cp = math.cos(phi)
 sp = math.sin(phi)
 R = np.matrix([[cp, sp], [-sp, cp]])
-S = np.matrix([[sx, 0],[0,sy]])
+S = np.matrix([[sx, 0], [0, sy]])
 
 # final result: matrix to align ellipse axes wrt coordinates system, normalize X and Y gains 
 # and rotate back.
