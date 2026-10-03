@@ -10,7 +10,9 @@ On the other hand, for a magnetometer mounted on a vehicle or large robot moving
 
 For navigation, the heading relative to magnetic North can be determined very simply by taking the arctangent of the corrected X and Y values. The magnetometer MUST be mounted with the Z axis as nearly vertical as possible, and heading accuracy will decrease if the vehicle or robot travels on slopes.
 
-For the popular standard orientation with magnetometer Y axis pointing at magnetic North and X pointing East, the heading relative to magnetic North in radians = PI/2 - atan2(Y, X). Subtract the local magnetic declination for headings relative to true North.
+For the popular standard orientation with magnetometer Y axis pointing at magnetic North and X pointing East, the heading relative to magnetic North in radians = PI/2 - atan2(Y, X). 
+
+For headings relative to true North, subtract your local magnetic declination.
 
 The calibration procedure proposed here is very simple: an ellipse is fitted to the raw data, an offset is calculated and subtracted, the ellipse is rotated so that the major axis is aligned along X, the data are rescaled to circularize the pattern, then rotated back into the original orientation.
 
